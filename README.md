@@ -115,8 +115,17 @@ Student_Perfomance_Analysis/
 ---
 
 ## How to Run
+
+```bash
+# 1. Clone the repository
 git clone https://github.com/Sergey-Gorodinsky/Student_performance_analysis.git
-cd Student_performance_analysis
+cd Student_Perfomance_Analysis
+
+# 2. Install dependencies
 pip install -r requirements.txt
-jupyter notebook
+
+# 3. Run notebooks in order
+jupyter notebook notebooks/data_cleaning.ipynb
+jupyter notebook notebooks/eda.ipynb
+```
 
