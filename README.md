@@ -113,3 +113,10 @@ Student_Perfomance_Analysis/
 ```
 
 ---
+
+## How to Run
+git clone https://github.com/Sergey-Gorodinsky/Student_performance_analysis.git
+cd Student_performance_analysis
+pip install -r requirements.txt
+jupyter notebook
+
