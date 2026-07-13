@@ -33,10 +33,14 @@ academic performance.
 
 
 
+<img width="1108" height="986" alt="pairplot" src="https://github.com/user-attachments/assets/db1fea43-2f0a-48d2-8dd3-11a62ff83147" />
+
+**Observations:**
+* All scatter plots show completely mixed color groups - no feature separates Low, Medium, and High performers.This confirms information from the correlation matrix: study hours, sleep, and online courses are equally distributed across all score groups.
+* The KDE diagonal reveals that avg_sleep_hours is bimodal across all groups, suggesting sleep patterns are independent of performance.
+* Conclusion: individual features alone cannot explain exam score.The dataset was generated independently of these features.
 
 
-- **No linear correlations found** - No
-meaningfull correlation between features
 ![alt text](images/correlations_heatmap.png)
 Observations:
 * No meaningful linear correlation was found between any feature indicating that study hours,
@@ -52,7 +56,21 @@ sleep, and online courses individually cannot predict exam performance through a
 - **Dataset is likely synthetic** - uniform feature distributions and near-zero correlations suggest scores were generated independently of the measured habits
 
 
+## Examinations of perfomarnce factors
 
+### Study time
+
+
+
+### Does exam score increase with study time?
+Answer: No
+
+Mean exam scores across study groups range from 69.5 to 71.0 - 
+a difference of only 1.5 points. Boxplots show near-identical 
+distributions across all groups.
+
+Study time has no meaningful effect on exam performance in this dataset.
+This is consistent with datasat being synthetic
 
 
 
