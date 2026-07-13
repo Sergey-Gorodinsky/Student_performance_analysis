@@ -1,3 +1,5 @@
+
+
 # Student Performance Analysis
 
 Exploratory data analysis of 1_000 students
@@ -15,22 +17,43 @@ academic performance.
 
 ---
 
+<h1 align="center">Executive Summary</h1>
+
+<img width="1389" height="1590" alt="histograms" src="https://github.com/user-attachments/assets/229e889e-5d61-413f-a424-777bfbf4ddf8" />
 
 
-## EDA Overview
-
-
-| Section | Description |
+| Variable | Details |
 |---|---|
-| 1. General Data Information | Shape, dtypes, missing values, duplicates |
-| 2. Univariate Analysis | Distributions, skewness, outliers |
-| 3. Correlation Analysis | heatmap |
-| 4. Pairplot | Multi-variable relationships by score group |
-| 5. Performance Factors | Study time, sleep, courses vs exam score |
-| 6. Student Segmentation | Low/Medium/High performer profiles |
-| 7. Key Insights & Conclusion | Main findings and limitations |
+| **daily_study_hours**| Uniform distribution - KDE is almost flat, no distinct peak. Skewness ≈ 0 - symmetrical. Range: 0.5 - 8 hours. No outliers |
+| online_courses_taken | Uniform distribution - KDE is flat because data is discrete. Each value occurs ≈ 150 - 175 times. No outliers |
+| **avg_sleep_hours** | Close to normal distribution - slightly bimodal (two small peaks near 5 and 7.5). Skewness: Weak left skew, slightly more students sleep less than average. Range: 4 - 9 hours. No outliers |
+| **exam_score** | Bimodal distribution - two peaks: one around 50–55, the other around 80–85. Skewness ≈ 0. Range: 40 - 100. No outliers
 
----
+
+
+
+
+
+
+- **No linear correlations found** - No
+meaningfull correlation between features
+![alt text](images/correlations_heatmap.png)
+Observations:
+* No meaningful linear correlation was found between any feature indicating that study hours,
+sleep, and online courses individually cannot predict exam performance through a linear relationship.
+
+
+
+- **Bimodal score distribution** - two distinct peaks near 50 and 80; students cluster into weak and strong performers
+
+
+- **Features are independent of performance** - Low, Medium, and High scorers have virtually identical study hours, sleep, and course enrollment
+- **Equal segment distribution** - 33% of students in each score group, atypical for real academic data
+- **Dataset is likely synthetic** - uniform feature distributions and near-zero correlations suggest scores were generated independently of the measured habits
+
+
+
+
 
 
 
@@ -48,69 +71,18 @@ academic performance.
 
 ---
 
-## Key Insights
-
-- **No linear correlations found** - No
-meaningfull correlation between features
-- **Bimodal score distribution** - two distinct peaks near 50 and 80; students cluster into weak and strong performers
-- **Features are independent of performance** - Low, Medium, and High scorers have virtually identical study hours, sleep, and course enrollment
-- **Equal segment distribution** - 33% of students in each score group, atypical for real academic data
-- **Dataset is likely synthetic** - uniform feature distributions and near-zero correlations suggest scores were generated independently of the measured habits
+## EDA Overview
 
 
-## Limitations
-
-- Dataset appears synthetically generated - findings may not reflect real student behavior
-- Key predictors likely missing: attendance, prior GPA, motivation, background ...
-- No causal inference possible from correlation analysis alone
-
-
-
-
----
-
-## Requirements
-
-```
-jupyter
-pandas
-numpy
-matplotlib
-seaborn
-```
-
----
-
-
-## Project Structure
-
-```
-Student_Perfomance_Analysis/
-│
-├── data/
-│   ├── raw/
-│   │   └── student_learning_habits_dataset.csv   # Original dataset
-│   └── processed/
-│       └── students_data.csv                     # Cleaned dataset
-│
-├── images/                                        # All visualizations
-│   ├── histograms.png
-│   ├── correlations_heatmap.png
-│   ├── pairplot.png
-│   ├── exam_score_and_study_hours.png
-│   ├── exam_score_and_courses.png
-│   ├── exam_score_and_sleep.png
-│   ├── segments_distribution.png
-│   └── segments.png
-│
-├── notebooks/
-│   ├── data_cleaning.ipynb                       # Data preprocessing
-│   └── eda.ipynb                                 # Full EDA
-│
-├── .gitignore
-├── requirements.txt
-└── README.md
-```
+| Section | Description |
+|---|---|
+| 1. General Data Information | Shape, dtypes, missing values, duplicates |
+| 2. Univariate Analysis | Distributions, skewness, outliers |
+| 3. Correlation Analysis | heatmap |
+| 4. Pairplot | Multi-variable relationships by score group |
+| 5. Performance Factors | Study time, sleep, courses vs exam score |
+| 6. Student Segmentation | Low/Medium/High performer profiles |
+| 7. Key Insights & Conclusion | Main findings and limitations |
 
 ---
 
